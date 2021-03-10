@@ -1,13 +1,13 @@
 import time
 
 # OYO Bomber
-def oyoBomber(browser, phoneNumber, attempts=5):
+def oyoBomber(browser, phoneNumber, attempts=5, waitingTime=2):
     for i in range(min(attempts, 5)):
         try:
             browser.get("https://www.oyorooms.com/login?country=&retUrl=/")
 
             # Waiting for the page to load
-            time.sleep(2)
+            time.sleep(waitingTime)
 
             # Selecting the input field
             inPut = browser.find_element_by_xpath(
@@ -24,4 +24,4 @@ def oyoBomber(browser, phoneNumber, attempts=5):
 
         finally:
             # Waiting so that one request completes
-            time.sleep(5)
+            time.sleep(waitingTime)
