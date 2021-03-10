@@ -18,10 +18,11 @@ if not re.match(r"^[0-9]{10}$", phoneNumber):
 options = Options()
 options.headless = True
 
+# Location of WebDriver
+webdriverLocation = f"{os.getcwd()}/chromedriver"
+
 # Change the path to webdriver if needed
-browser = webdriver.Chrome(
-    options=options, executable_path=f"{os.getcwd()}/chromedriver"
-)
+browser = webdriver.Chrome(options=options, executable_path=webdriverLocation)
 
 # Flipkart Bomber
 print("Starting Flipkart Bomber")
